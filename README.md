@@ -5,7 +5,7 @@ greets to https://github.com/zvldz/ha_custom_filters thats leading by example
 adds filters `decrypt` and `encrypt`
 
 To install directly:
-- drop the contained folder in the `custom_components` folder in HA
+- drop the `aes_cbc_filters` folder in the `custom_components` folder in HA
 
 To install via HACS:
 - In HACS, select the elipses in the top right
