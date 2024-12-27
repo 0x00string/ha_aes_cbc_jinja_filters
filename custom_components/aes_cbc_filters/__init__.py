@@ -8,7 +8,7 @@ _LOGGER = logging.getLogger(__name__)
 _TemplateEnvironment = template.TemplateEnvironment
 
 ## -- encrypt
-def encrypt(msg, key="41414141414141414141414141414141", iv="42424242424242424242424242424242"):
+def encrypt(msg, key=, iv):
 	iv = unhexlify(iv)
 	key = unhexlify(key)
 	msg = pad(msg.encode(), AES.block_size)
@@ -18,7 +18,7 @@ def encrypt(msg, key="41414141414141414141414141414141", iv="4242424242424242424
 	return out
 
 ## -- decrypt
-def decrypt(msg, key="41414141414141414141414141414141", iv="42424242424242424242424242424242"):
+def decrypt(msg, key=, iv=):
 	decipher = AES.new(key, AES.MODE_CBC, iv)
 	return unpad(decipher.decrypt(b64decode(out)), AES.block_size).decode('utf-8')
 
